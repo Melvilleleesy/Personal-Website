@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fade-In Test</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    #intermediate-content,
+    #main-content {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    #intermediate-content {
+      background-color: black;
+      color: white;
+      opacity: 1;
+      z-index: 2;
+    }
+
+    #intermediate-content.hidden {
+      opacity: 0;
+    }
+
+    #main-content {
+      background-color: darkgreen;
+      color: white;
+      opacity: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    #main-content.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="intermediate-content">Welcome to the Site...</div>
+  <div id="main-content">Now Fading In: Main Content</div>
+
+  <script>
+    const intermediate = document.getElementById('intermediate-content');
+    const main = document.getElementById('main-content');
+
+    setTimeout(() => {
+      // Fade out the intermediate screen
+      intermediate.classList.add('hidden');
+
+      // Slight delay to allow browser to register opacity 0 before fading in main
+      setTimeout(() => {
+        main.classList.add('visible');
+      }, 50);
+    }, 2000);
+  </script>
+
+</body>
+</html>

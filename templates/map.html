@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="screen visible" id="overlay">
+    <div class="partition top"></div>
+    
+    <div class="title-screen middle">
+      <div
+         style="animation: fadeIn 1.5s ease forwards;
+               background-image: url('static/images/logo.png');
+               background-size: contain;
+               background-repeat: no-repeat;
+               background-position: center;
+               width: 300px;
+               height: 300px;">
+      </div>
+      
+      <div style="opacity: 0; animation: fadeIn 1.5s ease forwards; animation-delay: 0.25s;">
+        <p class="basic-text">Melville's Version</p>
+        <p class="basic-text">Click Anywhere to Begin</p>
+      </div>
+    </div>
+    
+    <div class="partition bottom"></div>
+  </div>
+
+  <div class="screen hidden" id="intermediate-content">
+    <p class="basic-text">Welcome to the main site!</p>
+  </div>
+  
+  <div class="screen hidden" id="main-content">
+    <canvas id="game"></canvas>
+  </div>
+
+  <script src="{{ url_for('static', filename='/config/global-config.js') }}"></script>
+  <script src="{{ url_for('static', filename='/camera.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='/config/maps/ice-biome.js') }}"></script>
+  <script src="{{ url_for('static', filename='/config/maps/magma-biome.js') }}"></script>
+  <script src="{{ url_for('static', filename='/config/maps/forest-biome.js') }}"></script>
+  <script src="{{ url_for('static', filename='/config/maps/beach-biome.js') }}"></script>
+  <script src="{{ url_for('static', filename='/config/maps/hub-map.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='game.js') }}"></script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

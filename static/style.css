@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'PokemonSolid';
+    src: url('/static/fonts/Pokemon_Solid.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PokemonFont';
+    src: url('/static/fonts/Pokemon_FireRedLeafGreen.ttf') format('truetype');
+    font-display: swap;
+}
+
+@keyframes popUp {
+    0% { transform: scale(0.6); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.partition {
+    height: 15vh;
+    width: 100%;
+    background-color: black;
+}
+
+h1 {
+    font-family: 'PokemonSolid', sans-serif;
+    font-size: 60px;
+    color: #ffcb06;
+}
+
+.image-box {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.title-screen {
+    top: 0; left: 0;
+    width: 100%;
+    height: 70vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1s ease;
+    z-index: 10;
+}
+
+.basic-text {
+    font-family: 'PokemonFont', sans-serif;
+    font-size: 32px;
+    color: black;
+    margin: 0;
+}
+
+.subtitle-text {
+    font-size: 30px;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 1s;
+}
+
+.screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#overlay   {color: black; z-index: 3; }
+#intermediate-content {color: white; z-index: 2; }
+
+
+
+.middle {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game {
+  width: 800px;
+  height: 600px;
+  display: block;
+  border: 2px solid #333;
+  image-rendering: pixelated;
+}
+
+#main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+}
