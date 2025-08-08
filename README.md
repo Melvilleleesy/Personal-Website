@@ -25,7 +25,7 @@ A retro Pokemon-inspired interactive website featuring:
 ## How to Run
 
 1. Clone the repository
-2. Open `index.html` in a web browser
+2. Open `map.html` in a web browser
 3. Use WASD or arrow keys to move, Enter to interact
 
 ## Live Demo
